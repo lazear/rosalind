@@ -23,8 +23,7 @@ fn main() -> std::io::Result<()> {
 
 #[test]
 fn sample() {
-    let input =
-        "AAAACCCGGT".to_string();
+    let input = "AAAACCCGGT".to_string();
     let output = revc(input);
     assert_eq!(&output, "ACCGGGTTTT");
 }

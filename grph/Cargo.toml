@@ -1,0 +1,8 @@
+[package]
+name = "grph"
+version = "0.1.0"
+authors = ["Michael Lazear <lazear@scripps.edu>"]
+edition = "2018"
+
+[dependencies]
+utils = { path = "../utils" }
