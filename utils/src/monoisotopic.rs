@@ -4,8 +4,8 @@ pub struct Monoisotopic {
     table: HashMap<char, f64>,
 }
 
-impl Monoisotopic {
-    pub fn new() -> Self {
+impl Default for Monoisotopic {
+    fn default() -> Self {
         let mut table = HashMap::new();
         table.insert('A', 71.03711);
         table.insert('C', 103.00919);
@@ -27,17 +27,18 @@ impl Monoisotopic {
         table.insert('V', 99.06841);
         table.insert('W', 186.07931);
         table.insert('Y', 163.06333);
-        Monoisotopic {
-            table
-        }
-    }
-
-    pub fn get(&self, ch: char) -> Option<f64> {
-        self.table.get(&ch).map(|&f| f)
-    }
-
-    pub fn peptide_mass(&self, s: &str) -> f64 {
-        s.chars().filter_map(|ch| self.get(ch)).fold(0f64, |f, x| f + x)
+        Monoisotopic { table }
     }
 }
 
+impl Monoisotopic {
+    pub fn get(&self, ch: char) -> Option<f64> {
+        self.table.get(&ch).cloned()
+    }
+
+    pub fn peptide_mass(&self, s: &str) -> f64 {
+        s.chars()
+            .filter_map(|ch| self.get(ch))
+            .fold(0f64, |f, x| f + x)
+    }
+}
