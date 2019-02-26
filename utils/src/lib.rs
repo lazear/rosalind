@@ -4,6 +4,9 @@ use std::io;
 use std::iter::Peekable;
 use std::str::Chars;
 
+mod monoisotopic;
+pub use monoisotopic::Monoisotopic;
+
 pub struct Fasta<'s> {
     input: Peekable<Chars<'s>>,
 }

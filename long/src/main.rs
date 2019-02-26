@@ -64,29 +64,14 @@ fn dot(g: &Graph<'_>) {
     println!("}}");
 }
 
+
 fn main() -> std::io::Result<()> {
-    let map = Fasta::parse_file("rosalind_grph.txt")?;
-    let graph = Graph::build(3, &map);
+    let map = Fasta::parse_file("sample.txt")?;
+    let graph = Graph::build(4, &map);
     let mut f = File::create("out.txt")?;
     for edge in graph.edges() {
         writeln!(f, "{} {}", edge.0, edge.1)?;
     }
     dot(&graph);
     Ok(())
-}
-
-#[test]
-fn sample() {
-    let map = Fasta::parse_file("sample.txt").unwrap();
-    let edges = [
-        ("Rosalind_2391", "Rosalind_2323"),
-        ("Rosalind_0498", "Rosalind_0442"),
-        ("Rosalind_0498", "Rosalind_2391"),
-    ]
-    .into_iter()
-    .collect::<HashSet<_>>();
-
-    let graph = Graph::build(3, &map);
-
-    assert_eq!(edges, graph.edges().iter().collect());
 }
