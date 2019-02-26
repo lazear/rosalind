@@ -1,3 +1,5 @@
+use std::fs::File;
+use std::io::Write;
 use utils::Fasta;
 
 /// Transpose a matrix of An,m into a matrix of Am,n
@@ -25,14 +27,13 @@ fn index(ch: char) -> usize {
     }
 }
 
-fn matrix(input: Vec<&str>) -> Vec<Vec<usize>> {
+fn matrix(input: Vec<&str>) -> (String, Vec<Vec<usize>>) {
     let revidx = ['A', 'C', 'G', 'T'];
     let m = input
         .into_iter()
         .map(|v| v.chars().collect::<Vec<char>>())
         .collect::<Vec<Vec<char>>>();
     let t = transpose(m);
-    println!("{}", t.len());
 
     let mut consensus = String::new();
     let mut outer = Vec::new();
@@ -47,24 +48,25 @@ fn matrix(input: Vec<&str>) -> Vec<Vec<usize>> {
         outer.push(array);
         consensus.push(revidx[idx]);
     }
-    println!("{}", consensus);
-    transpose(outer)
+    (consensus, transpose(outer))
 }
 
 fn main() -> std::io::Result<()> {
     let input = Fasta::parse_file("rosalind_cons.txt")?;
-    input.iter().for_each(|(k, v)| println!("{}\n{}", k, v));
-    let out = matrix(input.values().map(|s| s as &str).collect());
+    let (consensus, out) = matrix(input.values().map(|s| s.trim()).collect());
     let revidx = ['A', 'C', 'G', 'T'];
+    let mut f = File::create("out.txt")?;
+    writeln!(f, "{}", consensus)?;
     for (nt, v) in revidx.iter().zip(out.iter()) {
-        println!(
+        writeln!(
+            f,
             "{}: {}",
             nt,
             v.iter()
                 .map(|el| format!("{} ", el))
                 .collect::<Vec<String>>()
                 .join(" ")
-        );
+        )?;
     }
     Ok(())
 }
