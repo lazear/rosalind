@@ -79,11 +79,10 @@ impl Default for CodonTable {
 impl CodonTable {
     pub fn translate(&self, input: &str) -> Option<String> {
         let mut output = String::new();
-        for i in (0..input.len() - 3).step_by(3) {
+        for i in (0..input.len().saturating_sub(3)).step_by(3) {
             let s = &input[i..i + 3];
             match self.get(s) {
                 None => return None,
-                Some('X') => break,
                 Some(c) => output.push(c),
             }
         }

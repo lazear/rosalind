@@ -1,0 +1,9 @@
+[package]
+name = "mprt"
+version = "0.1.0"
+authors = ["Michael Lazear <lazear@scripps.edu>"]
+edition = "2018"
+
+[dependencies]
+utils = { path = "../utils" }
+reqwest = "0.9"

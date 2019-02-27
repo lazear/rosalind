@@ -73,7 +73,7 @@ mod test {
 
     #[test]
     fn simple() {
-        let mut c = Counter::new();
+        let mut c = Counter::default();
         c.add(1);
         c.add(2);
         c.add(1);

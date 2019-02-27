@@ -21,6 +21,11 @@ impl<'s> Fasta<'s> {
         Ok(p.read())
     }
 
+    pub fn parse_string(s: &str) -> HashMap<String, String> {
+        let p = Fasta::new(s);
+        p.read()
+    }
+
     fn read_ident(input: &mut Peekable<Chars<'s>>) -> String {
         input
             .take_while(|&ch| ch != '\n')
