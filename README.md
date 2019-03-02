@@ -23,7 +23,7 @@ http://rosalind.info
 | LCSM | Finding a Shared Motif                         |         |
 | [MPRT](/mprt) | Finding a Protein Motif                        | Implemented a backtracking DFA        |
 | MRNA | Inferring mRNA from Protein                    |         |
-| REVP | Locating Restriction Sites                     |         |
+| [REVP](/revp) | Locating Restriction Sites                     | OCaml        |
 | [SPLC](/splc) | RNA Splicing                                   |         |
 | LEXF | Enumerating k-mers Lexicographically           |         |
 | LONG | Genome Assembly as Shortest Superstring        |         |

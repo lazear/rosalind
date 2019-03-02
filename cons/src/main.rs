@@ -55,6 +55,7 @@ fn main() -> std::io::Result<()> {
     let input = Fasta::parse_file("rosalind_cons.txt")?;
     let (consensus, out) = matrix(input.values().map(|s| s.trim()).collect());
     let revidx = ['A', 'C', 'G', 'T'];
+
     let mut f = File::create("out.txt")?;
     writeln!(f, "{}", consensus)?;
     for (nt, v) in revidx.iter().zip(out.iter()) {
