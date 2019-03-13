@@ -18,14 +18,16 @@ http://rosalind.info
 | [ORF](/orf)  | Open Reading Frames                            |        |
 | [PERM](/perm) | Enumerating Gene Orders                        | Heap's algorithm for permutations       |
 | [PRTM](/prtm) | Calculating Protein Mass                       |        |
-| IPRB | Mendel's First Law                             |         |
-| FIBD | Mortal Fibonacci Rabbits                       |         |
-| LCSM | Finding a Shared Motif                         |         |
+| [IPRB](/iprb) | Mendel's First Law                             |         |
 | [MPRT](/mprt) | Finding a Protein Motif                        | Implemented a backtracking DFA        |
-| MRNA | Inferring mRNA from Protein                    |         |
 | [REVP](/revp) | Locating Restriction Sites                     | OCaml        |
 | [SPLC](/splc) | RNA Splicing                                   |         |
+| [PROB](/prob) | Introduction to Random Strings                 |         |
+| [KMP](/kmp) | Speeding Up Motif Finding                              |         |
+| FIBD | Mortal Fibonacci Rabbits                       |         |
+| LCSM | Finding a Shared Motif                         |         |
 | LEXF | Enumerating k-mers Lexicographically           |         |
+| MRNA | Inferring mRNA from Protein                    |         |
 | LONG | Genome Assembly as Shortest Superstring        |         |
 | PMCH | Perfect Matchings and RNA Secondary Structures |         |
 | SIGN | Enumerating Oriented Gene Orderings            |         |
@@ -33,7 +35,6 @@ http://rosalind.info
 | LIA  | Independent Alleles                            |         |
 | LGIS | Longest Increasing Subsequence                 |         |
 | PPER | Partial Permutations                           |         |
-| PROB | Introduction to Random Strings                 |         |
 | SSEQ | Finding a Spliced Motif                        |         |
 | TRAN | Transitions and Transversions                  |         |
 | TREE | Completing a Tree                              |         |
