@@ -21,6 +21,12 @@ impl<'s> Fasta<'s> {
         Ok(p.read())
     }
 
+    pub fn parse_file_vec<P: AsRef<std::path::Path>>(path: P) -> io::Result<Vec<(String, String)>> {
+        let s = fs::read_to_string(path)?;
+        let p = Fasta::new(&s);
+        Ok(p.read_vec())
+    }
+
     pub fn parse_string(s: &str) -> HashMap<String, String> {
         let p = Fasta::new(s);
         p.read()
@@ -51,5 +57,18 @@ impl<'s> Fasta<'s> {
             map.insert(id, seq);
         }
         map
+    }
+
+    pub fn read_vec(mut self) -> Vec<(String, String)> {
+        let mut vec = Vec::new();
+        while let Some(ch) = self.input.peek() {
+            if ch == &'>' {
+                self.input.next().unwrap();
+            }
+            let id = Self::read_ident(&mut self.input);
+            let seq = Self::read_sequence(&mut self.input);
+            vec.push((id, seq));
+        }
+        vec
     }
 }

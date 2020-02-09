@@ -1,0 +1,7 @@
+[package]
+name = "iev"
+version = "0.1.0"
+authors = ["Tamer Gur"]
+edition = "2018"
+
+[dependencies]
