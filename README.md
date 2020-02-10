@@ -24,17 +24,17 @@ http://rosalind.info
 | [SPLC](/splc) | RNA Splicing                                   |         |
 | [PROB](/prob) | Introduction to Random Strings                 |         |
 | [KMP](/kmp) | Speeding Up Motif Finding                              |         |
-| FIBD | Mortal Fibonacci Rabbits                       |         |
-| LCSM | Finding a Shared Motif                         |         |
-| LEXF | Enumerating k-mers Lexicographically           |         |
-| MRNA | Inferring mRNA from Protein                    |         |
-| LONG | Genome Assembly as Shortest Superstring        |         |
-| PMCH | Perfect Matchings and RNA Secondary Structures |         |
-| SIGN | Enumerating Oriented Gene Orderings            |         |
-| IEV  | Calculating Expected Offspring                 |         |
-| LIA  | Independent Alleles                            |         |
-| LGIS | Longest Increasing Subsequence                 |         |
-| PPER | Partial Permutations                           |         |
-| SSEQ | Finding a Spliced Motif                        |         |
-| TRAN | Transitions and Transversions                  |         |
-| TREE | Completing a Tree                              |         |
+| [FIBD](/fibd) | Mortal Fibonacci Rabbits                       |         |
+| [LCSM](/lcsm) | Finding a Shared Motif                         |         |
+| [LEXF](/lexf) | Enumerating k-mers Lexicographically           |         |
+| [MRNA](/mrna) | Inferring mRNA from Protein                    |         |
+| [LONG](/long) | Genome Assembly as Shortest Superstring        |         |
+| [PMCH](/pmch) | Perfect Matchings and RNA Secondary Structures |         |
+| [SIGN](/sign) | Enumerating Oriented Gene Orderings            |         |
+| [IEV](/iev)  | Calculating Expected Offspring                 |         |
+| [LIA](/lia)  | Independent Alleles                            |         |
+| [LGIS](/lgis) | Longest Increasing Subsequence                 |         |
+| [PPER](/pper) | Partial Permutations                           |         |
+| [SSEQ](/sseq) | Finding a Spliced Motif                        |         |
+| [TRAN](/tran) | Transitions and Transversions                  |         |
+| [TREE](/tree) | Completing a Tree                              |         |

@@ -1,0 +1,5 @@
+[package]
+name = "lia"
+version = "0.1.0"
+authors = ["Tamer Gur"]
+edition = "2018"
